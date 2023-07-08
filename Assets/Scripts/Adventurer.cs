@@ -20,6 +20,7 @@ public class Adventurer : MonoBehaviour
         body.right = swordAnchor.position - body.position;
         arm.position = (bodyAnchor.position + swordAnchor.position) / 2;
         arm.up = swordAnchor.position - bodyAnchor.position;
+        head.up = -(swordAnchor.position - body.position);
         /*
         Vector2 oldArmAnchor1 = armAnchor1.position;
         Debug.Log("old arm anchor pos:" + oldArmAnchor1);

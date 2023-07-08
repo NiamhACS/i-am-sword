@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.0990566, g: 0.57899994, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,9 +193,9 @@ HingeJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0.17013405, y: 0.5103762}
   m_ConnectedAnchor: {x: 0.000000115855045, y: 1}
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: 0
+    m_MotorSpeed: -200
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
@@ -232,7 +232,6 @@ GameObject:
   - component: {fileID: 650293645861812178}
   - component: {fileID: 650293645861812191}
   - component: {fileID: 650293645861812177}
-  - component: {fileID: 650293645861812176}
   m_Layer: 0
   m_Name: Arm (1)
   m_TagString: Untagged
@@ -344,30 +343,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1.9999999}
   m_Direction: 0
---- !u!233 &650293645861812176
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650293645861812190}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.000000240822, y: -1.0000001}
-  m_ConnectedAnchor: {x: -0.107925445, y: -2.5541866}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!1 &650293645929770851
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,8 +471,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.0141509175, g: 1, b: 0.11617725, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2721bcbbd3a248d45bcbd30678d01b4f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -556,7 +531,6 @@ GameObject:
   - component: {fileID: 650293647313749893}
   - component: {fileID: 650293647313749880}
   - component: {fileID: 650293647313749895}
-  - component: {fileID: 650293647313749881}
   m_Layer: 0
   m_Name: Arm
   m_TagString: Untagged
@@ -668,27 +642,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1.9999999}
   m_Direction: 0
---- !u!233 &650293647313749881
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650293647313749891}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 1.0499997}
-  m_ConnectedAnchor: {x: 0.114818595, y: -2.5328977}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359

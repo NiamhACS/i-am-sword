@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -289,10 +289,10 @@ PrefabInstance:
       propertyPath: swordAnchor
       value: 
       objectReference: {fileID: 2120626409}
-    - target: {fileID: 650293645861812176, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 2079602245}
+    - target: {fileID: 650293645718272535, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
+      propertyPath: m_Motor.m_MotorSpeed
+      value: -300
+      objectReference: {fileID: 0}
     - target: {fileID: 650293645929770851, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
       propertyPath: m_Name
       value: Adventurer
@@ -341,9 +341,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 650293647313749881, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 2079602245}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}

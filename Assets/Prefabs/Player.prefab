@@ -49,12 +49,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6639566412049588854}
     - target: {fileID: 2139674013, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
+      propertyPath: maxLeftArmAngle
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139674013, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
       propertyPath: armRotationSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 650293645718272529, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650293645718272531, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 650293645929770851, guid: 83d063981205e9f4481f8fd105951ab9, type: 3}
       propertyPath: m_Name

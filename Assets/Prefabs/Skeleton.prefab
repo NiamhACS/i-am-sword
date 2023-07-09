@@ -86,14 +86,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42e39fc8a8871848a000b6b4a844074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyIndex: 0
   targetTag: Body
   preferredDist: 12
   moveSpeed: 3
   rotator: {fileID: 2060308493446708847}
   bodyAnimator: {fileID: 6606678267030071604}
+  corpseSprites:
+  - {fileID: 21300000, guid: e13148dedac57784288e961488bac0a7, type: 3}
   projectilePrefab: {fileID: 7896629366271547524, guid: ce2ae6ab0c93e484495ce1fc73804a26, type: 3}
   projectilePool: []
   missileSpeed: 12
+  missileLifeSpan: 10
   minTimeUntilNextShot: 1.5
   maxTimeUntilNextShot: 2
 --- !u!1 &2060308493446708844

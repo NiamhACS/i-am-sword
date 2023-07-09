@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissileSpawner : MonoBehaviour
 {
     public GameObject Missile;
-    public float spawnRate = 1;
+    public float spawn_rate = 1;
     private float timer = 0;
 
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class MissileSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer < spawnRate)
+        if(timer < spawn_rate)
         {
             timer += Time.deltaTime;
         }

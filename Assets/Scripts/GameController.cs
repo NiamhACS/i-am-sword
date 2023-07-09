@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject corpsePrefab;
     public Queue<GameObject> corpses;
     public int score = 0;
+    public float health = 3;
     public float[] timeThresholds;
     public int currentEnemies = 0;
     public float nextInterval = 0;
@@ -23,6 +24,8 @@ public class GameController : MonoBehaviour
         {
             corpses.Enqueue(Instantiate(corpsePrefab, corpseParent));
         }
+        score = 0;
+        health = 3;
     }
 
     // Update is called once per frame
@@ -30,12 +33,12 @@ public class GameController : MonoBehaviour
     {
         if (currentEnemies < timeThresholds.Length)
         {
-            if (Time.time > timeThresholds[currentEnemies])
+            if (Time.timeSinceLevelLoad > timeThresholds[currentEnemies])
             {
                 currentEnemies++;
             }
         }
-        if (Time.time > nextInterval)
+        if (Time.timeSinceLevelLoad > nextInterval)
         {
             SpawnData enemy = EnemySpawner.instance.enemies[Random.Range(0, currentEnemies + 1)];
             nextInterval += EnemySpawner.instance.Spawn(enemy);
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour
 
     public void SpawnCorpse(Enemy enemy)
     {
-        Corpse newCorpse = corpses.Dequeue().GetComponent<Corpse>();
+        Corpse newCorpse = corpses.Count > 0 ? corpses.Dequeue().GetComponent<Corpse>() : Instantiate(corpsePrefab, corpseParent).GetComponent<Corpse>();
         newCorpse.sprites = enemy.corpseSprites;
         newCorpse.transform.position = enemy.transform.position;
         newCorpse.lifeSpan = 4;
@@ -54,5 +57,10 @@ public class GameController : MonoBehaviour
     public void GainScore(int score)
     {
         this.score += score;
+    }
+
+    public void TakeDamage()
+    {
+
     }
 }

@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource buttonAudio;
     public void MoveToScene()
     {
-        
+
         SceneManager.LoadScene(1);
     }
 
     public void PlayClickSound()
     {
-        audio.Play();
+        buttonAudio.Play();
     }
 }

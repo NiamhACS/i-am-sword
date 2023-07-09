@@ -37,4 +37,12 @@ public class Adventurer : MonoBehaviour
         }
         head.up = -(swordAnchor.position - body.position);
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals("Lethal"))
+        {
+            GameController.instance.TakeDamage();
+        }
+    }
 }

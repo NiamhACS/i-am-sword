@@ -124,6 +124,99 @@ Transform:
   m_Father: {fileID: 5649667082959778556}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2592421853294273676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4156277395531626966}
+  m_Layer: 0
+  m_Name: EliteGobbos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4156277395531626966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592421853294273676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5649667082959778556}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3558372411938225454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755849934462003999}
+  m_Layer: 0
+  m_Name: ArchMages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755849934462003999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558372411938225454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5649667082959778556}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5631802727864465921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7986127945572038261}
+  m_Layer: 0
+  m_Name: DarkSkeletons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7986127945572038261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5631802727864465921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5649667082959778556}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5649667082959778547
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5649667082959778556}
   - component: {fileID: 5649667082959778557}
-  - component: {fileID: 5649667082959778546}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -158,6 +250,10 @@ RectTransform:
   - {fileID: 1734990286}
   - {fileID: 1485631801}
   - {fileID: 1145486783}
+  - {fileID: 4156277395531626966}
+  - {fileID: 2965010292540997563}
+  - {fileID: 7986127945572038261}
+  - {fileID: 1755849934462003999}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -182,47 +278,72 @@ MonoBehaviour:
   - enemyIndex: 0
     scoreGain: 100
     parent: {fileID: 757957838}
-    spawnIntervalRange: {x: 4, y: 10}
+    spawnIntervalRange: {x: 0, y: 0.5}
     prefab: {fileID: 4183118014329183384, guid: e5c663ebe3b47ad4281c369a90c2ed15, type: 3}
   - enemyIndex: 0
     scoreGain: 150
     parent: {fileID: 1734990286}
-    spawnIntervalRange: {x: 4, y: 10}
+    spawnIntervalRange: {x: 0.5, y: 1}
     prefab: {fileID: 4822681119212007251, guid: 5dcc5abda30eb0c41a09e90b4e473c98, type: 3}
   - enemyIndex: 0
     scoreGain: 250
     parent: {fileID: 1485631801}
-    spawnIntervalRange: {x: 4, y: 10}
+    spawnIntervalRange: {x: 1, y: 1.5}
     prefab: {fileID: 2060308492947866889, guid: b0d1eab9a40dcae4cb2cfde72a5d4afe, type: 3}
   - enemyIndex: 0
     scoreGain: 400
     parent: {fileID: 1145486783}
-    spawnIntervalRange: {x: 4, y: 10}
+    spawnIntervalRange: {x: 1.5, y: 2}
     prefab: {fileID: 988812881022190088, guid: 4bb5a56dab09dd0469e6feab2609a52e, type: 3}
+  - enemyIndex: 0
+    scoreGain: 600
+    parent: {fileID: 4156277395531626966}
+    spawnIntervalRange: {x: 1.5, y: 2}
+    prefab: {fileID: 2592421853294273676}
+  - enemyIndex: 0
+    scoreGain: 400
+    parent: {fileID: 2965010292540997563}
+    spawnIntervalRange: {x: 1.5, y: 2}
+    prefab: {fileID: 7824326035227843633, guid: 052543ac48e5b5740a97d6042b526b35, type: 3}
+  - enemyIndex: 0
+    scoreGain: 400
+    parent: {fileID: 7986127945572038261}
+    spawnIntervalRange: {x: 1.5, y: 2}
+    prefab: {fileID: 4282837548258134133, guid: c8616ff2ea0235143a371276523e5287, type: 3}
+  - enemyIndex: 0
+    scoreGain: 400
+    parent: {fileID: 1755849934462003999}
+    spawnIntervalRange: {x: 1.5, y: 2}
+    prefab: {fileID: 8049457650268410383, guid: 5f4d91467adafeb4a963919c73fa34b7, type: 3}
   spawnBounds: {fileID: 5649667082959778556}
---- !u!61 &5649667082959778546
-BoxCollider2D:
+--- !u!1 &6140387051264030934
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649667082959778547}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 40, y: 25}
-  m_EdgeRadius: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2965010292540997563}
+  m_Layer: 0
+  m_Name: PinkSlimes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2965010292540997563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140387051264030934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5649667082959778556}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

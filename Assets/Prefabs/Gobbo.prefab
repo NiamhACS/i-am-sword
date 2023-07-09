@@ -89,7 +89,7 @@ MonoBehaviour:
   enemyIndex: 0
   targetTag: Body
   preferredDist: 0
-  moveSpeed: 4
+  moveSpeed: 6
   rotator: {fileID: 4183118014574522871}
   bodyAnimator: {fileID: 9007762138065725798}
   corpseSprites:

@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyIndex: 0
   targetTag: Body
-  preferredDist: 12
+  preferredDist: 15
   moveSpeed: 3
   rotator: {fileID: 2060308493446708847}
   bodyAnimator: {fileID: 6606678267030071604}

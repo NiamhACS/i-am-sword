@@ -8,7 +8,7 @@ public class RotateTowardsPlayer : MonoBehaviour
 
     public float speed;
 
-    public float rotationModifier;
+    public float rotation_modifier;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class RotateTowardsPlayer : MonoBehaviour
     void Update()
     {
         Vector3 vectorToTarget = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotation_modifier;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
     }

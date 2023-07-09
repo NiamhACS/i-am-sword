@@ -8,7 +8,7 @@ public class HumanHealth : MonoBehaviour
     public float current_health;
     public HealthBar healthBar;
 
-    public float health_regen_rate = .2f;
+    public float health_regen_rate = .08f;
 
     void Start()
     {
@@ -19,17 +19,26 @@ public class HumanHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+
+        //regen
+        if (current_health < max_health)
         {
-            TakeDamage(1);
+            current_health += health_regen_rate * Time.deltaTime;
+            healthBar.SetHealth(current_health);
         }
 
+        //update health bar
         if (current_health < max_health)
         {
             current_health += health_regen_rate * Time.deltaTime;
             healthBar.SetHealth(current_health);
         }
         
+        //die
+        if (current_health < 0)
+        {
+            Time.timeScale = 0;
+        }
     }
 
     void TakeDamage(int damage)

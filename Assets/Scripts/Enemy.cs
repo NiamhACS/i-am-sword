@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 0;
     public Transform rotator;
     protected Transform target;
+    public BodyAnimator bodyAnimator;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -28,6 +29,14 @@ public class Enemy : MonoBehaviour
         {
             Vector2 velocity = rotator.right * Time.deltaTime * moveSpeed;
             transform.position = (Vector2)transform.position + velocity;
+            if (bodyAnimator != null)
+            {
+                bodyAnimator.moving = true;
+            }
+        }
+        else if (bodyAnimator != null)
+        {
+            bodyAnimator.moving = false;
         }
     }
 }

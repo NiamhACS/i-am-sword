@@ -5,14 +5,24 @@ using UnityEngine;
 
 public class ProjectileEnemy : Enemy
 {
+    public GameObject projectilePrefab;
+    public GameObject[] projectilePool;
     bool shooting = false;
     float timeUntilNextShot;
-    float minTimeUntilNextShot;
-    float maxTimeUntilNextShot;
+    public float missileSpeed;
+    public float missileLifeSpan = 10;
+    public float minTimeUntilNextShot;
+    public float maxTimeUntilNextShot;
 
     protected override void Start()
     {
         base.Start();
+        projectilePool = new GameObject[5];
+        for (int i = 0; i < projectilePool.Length; i++)
+        {
+            projectilePool[i] = Instantiate(projectilePrefab);
+            projectilePool[i].SetActive(false);
+        }
         shooting = false;
     }
 
@@ -48,6 +58,17 @@ public class ProjectileEnemy : Enemy
 
     protected virtual void Shoot()
     {
-
+        for (int i = 0; i < projectilePool.Length; i++)
+        {
+            if (!projectilePool[i].activeSelf)
+            {
+                projectilePool[i].transform.position = transform.position;
+                projectilePool[i].transform.up = rotator.right;
+                projectilePool[i].GetComponent<Missile>().speed = missileSpeed;
+                projectilePool[i].GetComponent<Missile>().lifeSpan = missileLifeSpan;
+                projectilePool[i].SetActive(true);
+                return;
+            }
+        }
     }
 }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int enemyIndex;
     public string targetTag = "Body";
     public float preferredDist = 0;
     public float moveSpeed = 0;
     public Transform rotator;
     protected Transform target;
     public BodyAnimator bodyAnimator;
+    public Sprite[] corpseSprites;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -37,6 +39,17 @@ public class Enemy : MonoBehaviour
         else if (bodyAnimator != null)
         {
             bodyAnimator.moving = false;
+        }
+    }
+
+    protected void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.gameObject.tag.Equals("Player"))
+        {
+            GameController.instance.SpawnCorpse(this);
+            GameController.instance.GainScore(EnemySpawner.instance.enemies[enemyIndex].scoreGain);
+            EnemySpawner.instance.enemies[enemyIndex].pool.Enqueue(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

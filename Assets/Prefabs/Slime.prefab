@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4822681119212007249}
-  - component: {fileID: 4822681119212007248}
   - component: {fileID: 5935621916692720779}
   - component: {fileID: 2276446516201959384}
+  - component: {fileID: 4822681119212007248}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -122,33 +122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4822681119212007248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4822681119212007251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e97560e11603aec44814174bb45d05a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTag: Body
-  preferredDist: 0
-  moveSpeed: 20
-  rotator: {fileID: 4822681119684100205}
-  top: {fileID: 4822681119400767045}
-  bottom: {fileID: 4822681119211877185}
-  middle: {fileID: 4822681119536127746}
-  middleAnim: {fileID: 4822681119536127756}
-  topAnim: {fileID: 4822681119400767419}
-  moving: 0
-  maxTimeBetweenMoves: 2
-  minTimeBetweenMoves: 1.5
-  jumpDist: 5
-  start: {x: 0, y: 0}
-  landing: {x: 0, y: 0}
 --- !u!50 &5935621916692720779
 Rigidbody2D:
   serializedVersion: 4
@@ -186,6 +159,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!114 &4822681119212007248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822681119212007251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97560e11603aec44814174bb45d05a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyIndex: 0
+  targetTag: Body
+  preferredDist: 0
+  moveSpeed: 20
+  rotator: {fileID: 4822681119684100205}
+  bodyAnimator: {fileID: 0}
+  corpseSprites:
+  - {fileID: 21300000, guid: 0bbfd6b41afc80b4cbbbc63b2ba96ee8, type: 3}
+  top: {fileID: 4822681119400767045}
+  bottom: {fileID: 4822681119211877185}
+  middle: {fileID: 4822681119536127746}
+  middleAnim: {fileID: 4822681119536127756}
+  topAnim: {fileID: 4822681119400767419}
+  moving: 0
+  maxTimeBetweenMoves: 2
+  minTimeBetweenMoves: 1.5
+  jumpDist: 5
+  start: {x: 0, y: 0}
+  landing: {x: 0, y: 0}
 --- !u!1 &4822681119400767044
 GameObject:
   m_ObjectHideFlags: 0

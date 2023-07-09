@@ -7,6 +7,9 @@ using UnityEngine;
 [System.Serializable]
 public struct SpawnData
 {
+    public int enemyIndex;
+    public int scoreGain;
+    public Transform parent;
     public Vector2 spawnIntervalRange;
     public GameObject prefab;
     public Queue<GameObject> pool;
@@ -25,7 +28,8 @@ public class EnemySpawner : MonoBehaviour
         instance = this;
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].pool = GeneratePool(enemies[i].prefab, 10);
+            enemies[i].enemyIndex = i;
+            enemies[i].pool = GeneratePool(enemies[i], 10);
         }
     }
 
@@ -42,13 +46,14 @@ public class EnemySpawner : MonoBehaviour
         return Random.Range(data.spawnIntervalRange.x, data.spawnIntervalRange.y);
     }
 
-    public Queue<GameObject> GeneratePool(GameObject prefab, int quantity)
+    public Queue<GameObject> GeneratePool(SpawnData spawnData, int quantity)
     {
         Queue<GameObject> pool = new();
         for (int i = 0; i < quantity; i++)
         {
-            GameObject newEnemy = Instantiate(prefab);
+            GameObject newEnemy = Instantiate(spawnData.prefab);
             newEnemy.SetActive(false);
+            newEnemy.GetComponent<Enemy>().enemyIndex = spawnData.enemyIndex;
             pool.Enqueue(newEnemy);
         }
         return pool;

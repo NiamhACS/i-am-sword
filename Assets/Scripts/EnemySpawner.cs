@@ -26,14 +26,16 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].pool = GeneratePool(enemies[i].prefab, 10);
-            Debug.Log(enemies[i].pool);
         }
     }
 
     public float Spawn(SpawnData data)
     {
-        Debug.Log(data.pool);
         Vector2 spawnPoint = RandomPointOnRect(spawnBounds.rect);
+        if (data.pool.Count == 0)
+        {
+            data.pool.Enqueue(Instantiate(data.prefab));
+        }
         GameObject newEnemy = data.pool.Dequeue();
         newEnemy.transform.position = spawnPoint;
         newEnemy.SetActive(true);

@@ -237,7 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  timeThresholds: []
+  timeThresholds:
+  - 10
   currentEnemies: 0
   nextInterval: 0
 --- !u!4 &1739413274
@@ -265,6 +266,10 @@ PrefabInstance:
     - target: {fileID: 5649667082959778547, guid: 5d30bf26f2563214cb227d78c6a02dc0, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649667082959778547, guid: 5d30bf26f2563214cb227d78c6a02dc0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5649667082959778556, guid: 5d30bf26f2563214cb227d78c6a02dc0, type: 3}
       propertyPath: m_Pivot.x
@@ -350,6 +355,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5649667082959778557, guid: 5d30bf26f2563214cb227d78c6a02dc0, type: 3}
+      propertyPath: enemies.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 4822681119212007251, guid: 5dcc5abda30eb0c41a09e90b4e473c98, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d30bf26f2563214cb227d78c6a02dc0, type: 3}
 --- !u!1001 &6620679697413886170
@@ -359,6 +368,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6620679696300068914, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
+      propertyPath: m_TagString
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620679696408045214, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
+      propertyPath: blockSlowDown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620679696414219773, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620679697218742050, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6620679697415808712, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -406,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 6620679697415808715, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620679697731956058, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237eea469a715ff4880b12b8589d6aeb, type: 3}

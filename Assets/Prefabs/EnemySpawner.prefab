@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - spawnIntervalRange: {x: 4, y: 10}
-    prefab: {fileID: 8049929437553808624, guid: d430370ec9c2d5c4cac3d6bbc2af269f, type: 3}
+    prefab: {fileID: 4183118014329183384, guid: e5c663ebe3b47ad4281c369a90c2ed15, type: 3}
   - spawnIntervalRange: {x: 4, y: 10}
     prefab: {fileID: 1837764143731540860, guid: 3d1503d005c28e042a8257d77cd32f23, type: 3}
   spawnBounds: {fileID: 5649667082959778556}

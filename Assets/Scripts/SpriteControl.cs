@@ -20,27 +20,32 @@ public class SpriteControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Rotator.transform.rotation.eulerAngles.z);
-        if ((Rotator.transform.rotation.eulerAngles.z <= 45) || (Rotator.transform.rotation.eulerAngles.z > 315)){
+        //Debug.Log(Rotator.transform.rotation.eulerAngles.z);
+        if ((Rotator.transform.rotation.eulerAngles.z <= 45) || (Rotator.transform.rotation.eulerAngles.z > 315))
+        {
             spriteRenderer.sprite = SideSprite;
             spriteRenderer.flipX = false;
         }
-        else if (Rotator.transform.rotation.eulerAngles.z <= 135){
+        else if (Rotator.transform.rotation.eulerAngles.z <= 135)
+        {
             spriteRenderer.sprite = UpSprite;
             spriteRenderer.flipX = false;
         }
-        else if (Rotator.transform.rotation.eulerAngles.z <= 225){
+        else if (Rotator.transform.rotation.eulerAngles.z <= 225)
+        {
             spriteRenderer.sprite = SideSprite;
             spriteRenderer.flipX = true;
         }
-        else if (Rotator.transform.rotation.eulerAngles.z <= 315){
+        else if (Rotator.transform.rotation.eulerAngles.z <= 315)
+        {
             spriteRenderer.sprite = DownSprite;
             spriteRenderer.flipX = false;
-            
+
         }
-        else{
+        else
+        {
             Debug.Log("wtf is my rotation");
         }
-        
+
     }
 }

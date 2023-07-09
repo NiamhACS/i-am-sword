@@ -20,6 +20,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentEnemies < timeThresholds.Length)
+        {
+            if (Time.time > timeThresholds[currentEnemies])
+            {
+                currentEnemies++;
+            }
+        }
         if (Time.time > nextInterval)
         {
             SpawnData enemy = EnemySpawner.instance.enemies[Random.Range(0, currentEnemies + 1)];

@@ -33,14 +33,5 @@ public class Adventurer : MonoBehaviour
             leftArm.rotation = Quaternion.RotateTowards(leftArm.rotation, Quaternion.Euler(0, 0, body.rotation.eulerAngles.z + minLeftArmAngle), armRotationSpeed);
         }
         head.up = -(swordAnchor.position - body.position);
-        /*
-        Vector2 oldArmAnchor1 = armAnchor1.position;
-        Debug.Log("old arm anchor pos:" + oldArmAnchor1);
-        armAnchor1.position = swordAnchor.position;
-        Debug.Log("arm anchor pos:" + armAnchor1.position);
-        Debug.Log("clamped vector:" + Vector2.ClampMagnitude(oldArmAnchor1 - (Vector2)armAnchor1.position, 1));
-        arm.position = Vector2.ClampMagnitude(oldArmAnchor1 - (Vector2)armAnchor1.position, 1) + (Vector2)armAnchor1.position;
-        arm.up = armAnchor1.position - arm.position;
-        */
     }
 }

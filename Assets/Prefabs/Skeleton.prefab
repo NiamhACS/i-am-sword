@@ -87,15 +87,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Body
-  preferredDist: 12
+  preferredDist: 15
   moveSpeed: 3
   rotator: {fileID: 2060308493446708847}
   bodyAnimator: {fileID: 6606678267030071604}
   projectilePrefab: {fileID: 7896629366271547524, guid: ce2ae6ab0c93e484495ce1fc73804a26, type: 3}
   projectilePool: []
   missileSpeed: 12
+<<<<<<< Updated upstream
   minTimeUntilNextShot: 1.5
   maxTimeUntilNextShot: 2
+=======
+  missileLifeSpan: 10
+  minTimeUntilNextShot: 1
+  maxTimeUntilNextShot: 1.5
+>>>>>>> Stashed changes
 --- !u!1 &2060308493446708844
 GameObject:
   m_ObjectHideFlags: 0

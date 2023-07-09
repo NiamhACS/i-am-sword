@@ -150,14 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Body
-  preferredDist: 10
+  preferredDist: 12
   moveSpeed: 3
   rotator: {fileID: 988812881672051880}
   bodyAnimator: {fileID: 6662837181960890420}
   projectilePrefab: {fileID: 2938654495494598252, guid: 0f015da3deddd3e4bb4c544f703e5631, type: 3}
   projectilePool: []
   missileSpeed: 8
-  missileLifeSpan: 3
+  missileLifeSpan: 4
   minTimeUntilNextShot: 2
   maxTimeUntilNextShot: 3
 --- !u!1 &988812881672051883

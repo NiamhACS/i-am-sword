@@ -51,10 +51,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
+<<<<<<< Updated upstream
   - spawnIntervalRange: {x: 4, y: 10}
     prefab: {fileID: 4183118014329183384, guid: e5c663ebe3b47ad4281c369a90c2ed15, type: 3}
   - spawnIntervalRange: {x: 4, y: 10}
     prefab: {fileID: 1837764143731540860, guid: 3d1503d005c28e042a8257d77cd32f23, type: 3}
+=======
+  - enemyIndex: 0
+    scoreGain: 100
+    parent: {fileID: 757957838}
+    spawnIntervalRange: {x: 1, y: 1}
+    prefab: {fileID: 4183118014329183384, guid: e5c663ebe3b47ad4281c369a90c2ed15, type: 3}
+  - enemyIndex: 0
+    scoreGain: 150
+    parent: {fileID: 1734990286}
+    spawnIntervalRange: {x: 1, y: 2}
+    prefab: {fileID: 4822681119212007251, guid: 5dcc5abda30eb0c41a09e90b4e473c98, type: 3}
+  - enemyIndex: 0
+    scoreGain: 250
+    parent: {fileID: 1485631801}
+    spawnIntervalRange: {x: 1, y: 3}
+    prefab: {fileID: 2060308492947866889, guid: b0d1eab9a40dcae4cb2cfde72a5d4afe, type: 3}
+  - enemyIndex: 0
+    scoreGain: 400
+    parent: {fileID: 1145486783}
+    spawnIntervalRange: {x: 1, y: 3}
+    prefab: {fileID: 988812881022190088, guid: 4bb5a56dab09dd0469e6feab2609a52e, type: 3}
+>>>>>>> Stashed changes
   spawnBounds: {fileID: 5649667082959778556}
 --- !u!61 &5649667082959778546
 BoxCollider2D:

@@ -21,7 +21,11 @@ public class Corpse : MonoBehaviour
         flashTimer = .1f;
         currentSprite = 0;
         spriteRenderer.enabled = true;
-        spriteRenderer.sprite = sprites[currentSprite];
+        if (sprites.Length > 0)
+        {
+            spriteRenderer.sprite = sprites[currentSprite];
+        }
+
     }
 
     // Update is called once per frame

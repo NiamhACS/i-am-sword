@@ -217,7 +217,7 @@ MonoBehaviour:
     scoreGain: 100
     parent: {fileID: 6727058606664538866}
     spawnIntervalRange: {x: 0, y: 0.5}
-    prefab: {fileID: 4183118014329183384, guid: e5c663ebe3b47ad4281c369a90c2ed15, type: 3}
+    prefab: {fileID: 1483359472536810927, guid: e5c663ebe3b47ad4281c369a90c2ed15, type: 3}
   - enemyIndex: 0
     scoreGain: 150
     parent: {fileID: 6727058606187091016}
@@ -227,7 +227,7 @@ MonoBehaviour:
     scoreGain: 250
     parent: {fileID: 6727058606775959223}
     spawnIntervalRange: {x: 1, y: 1.5}
-    prefab: {fileID: 2060308492947866889, guid: b0d1eab9a40dcae4cb2cfde72a5d4afe, type: 3}
+    prefab: {fileID: 3328370782026732460, guid: b0d1eab9a40dcae4cb2cfde72a5d4afe, type: 3}
   - enemyIndex: 0
     scoreGain: 400
     parent: {fileID: 6727058606339076345}

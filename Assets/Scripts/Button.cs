@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class Button : MonoBehaviour
 {
     public AudioSource buttonAudio;
-    public void MoveToScene()
+    public void MoveToGame()
     {
-
         SceneManager.LoadScene(1);
+    }
+
+    public void MoveToMenu()
+    {
+        Destroy(GameController.instance.gameObject);
+        SceneManager.LoadScene(0);
     }
 
     public void PlayClickSound()

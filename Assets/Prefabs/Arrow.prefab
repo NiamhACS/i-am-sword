@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8044559462773142224}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  flipInterval: 0
+  spriteRenderer: {fileID: 0}
+  lifeSpan: 10

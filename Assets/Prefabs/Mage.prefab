@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 6619835760714623090}
   m_Layer: 0
   m_Name: Mage
-  m_TagString: Untagged
+  m_TagString: Lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,8 @@ MonoBehaviour:
   targetTag: Body
   preferredDist: 12
   moveSpeed: 3
+  canDamage: 1
+  damageCooldown: 1
   rotator: {fileID: 988812881672051880}
   bodyAnimator: {fileID: 6662837181960890420}
   corpseSprites:
@@ -199,7 +201,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2938654495494598252, guid: 0f015da3deddd3e4bb4c544f703e5631, type: 3}
   projectilePool: []
   missileSpeed: 8
-  missileLifeSpan: 4
+  missileLifeSpan: 3
   minTimeUntilNextShot: 2
   maxTimeUntilNextShot: 3
 --- !u!1 &988812881672051883

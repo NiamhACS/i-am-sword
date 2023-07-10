@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SwordAnchor
   - Body
+  - Lethal
   layers:
   - Default
   - TransparentFX

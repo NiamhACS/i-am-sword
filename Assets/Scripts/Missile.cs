@@ -36,4 +36,17 @@ public class Missile : MonoBehaviour
         }
         lifeSpan -= Time.deltaTime;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Body"))
+        {
+            GameController.instance.TakeDamage();
+            gameObject.SetActive(false);
+        }
+        if (other.gameObject.tag.Equals("Player") && Input.GetMouseButton(1))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

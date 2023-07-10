@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -9,8 +9,12 @@ public class GameController : MonoBehaviour
     public Transform corpseParent;
     public GameObject corpsePrefab;
     public Queue<GameObject> corpses;
+    public AudioSource source;
+    public AudioClip kill;
+    public AudioClip hurt;
     public int score = 0;
     public float health = 3;
+    public bool end;
     public float[] timeThresholds;
     public int currentEnemies = 0;
     public float nextInterval = 0;
@@ -19,7 +23,9 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
+        DontDestroyOnLoad(this);
         corpses = new();
+        end = false;
         for (int i = 0; i < 50; i++)
         {
             corpses.Enqueue(Instantiate(corpsePrefab, corpseParent));
@@ -31,22 +37,31 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentEnemies < timeThresholds.Length)
+        if (!end)
         {
-            if (Time.timeSinceLevelLoad > timeThresholds[currentEnemies])
+            if (currentEnemies < timeThresholds.Length)
             {
-                currentEnemies++;
+                if (Time.timeSinceLevelLoad > timeThresholds[currentEnemies])
+                {
+                    currentEnemies++;
+                }
             }
-        }
-        if (Time.timeSinceLevelLoad > nextInterval)
-        {
-            SpawnData enemy = EnemySpawner.instance.enemies[Random.Range(0, currentEnemies + 1)];
-            nextInterval += EnemySpawner.instance.Spawn(enemy);
+            if (Time.timeSinceLevelLoad > nextInterval)
+            {
+                SpawnData enemy = EnemySpawner.instance.enemies[Random.Range(0, currentEnemies + 1)];
+                nextInterval += EnemySpawner.instance.Spawn(enemy);
+            }
+            if (health <= 0)
+            {
+                end = true;
+                SceneManager.LoadScene(2);
+            }
         }
     }
 
     public void SpawnCorpse(Enemy enemy)
     {
+        source.PlayOneShot(kill);
         Corpse newCorpse = corpses.Count > 0 ? corpses.Dequeue().GetComponent<Corpse>() : Instantiate(corpsePrefab, corpseParent).GetComponent<Corpse>();
         newCorpse.sprites = enemy.corpseSprites;
         newCorpse.transform.position = enemy.transform.position;
@@ -61,6 +76,7 @@ public class GameController : MonoBehaviour
 
     public void TakeDamage()
     {
-
+        source.PlayOneShot(hurt);
+        health -= 1;
     }
 }

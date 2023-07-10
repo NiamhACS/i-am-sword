@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public string targetTag = "Body";
     public float preferredDist = 0;
     public float moveSpeed = 0;
+    public bool canDamage = true;
+    public float damageCooldown = 1f;
     public Transform rotator;
     protected Transform target;
     public BodyAnimator bodyAnimator;
@@ -42,6 +44,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected void OnEnable()
+    {
+        canDamage = true;
+    }
+
     protected void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.gameObject.tag.Equals("Player"))
@@ -50,6 +57,16 @@ public class Enemy : MonoBehaviour
             GameController.instance.GainScore(EnemySpawner.instance.enemies[enemyIndex].scoreGain);
             EnemySpawner.instance.enemies[enemyIndex].pool.Enqueue(this.gameObject);
             gameObject.SetActive(false);
+        }
+        if (canDamage && other.collider.gameObject.tag.Equals("Body"))
+        {
+            GameController.instance.TakeDamage();
+            canDamage = false;
+            damageCooldown = Time.time + 1;
+        }
+        else if (!canDamage && Time.time > damageCooldown)
+        {
+            canDamage = true;
         }
     }
 }

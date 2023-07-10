@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 4166940760147933301}
   m_Layer: 0
   m_Name: ArchMage
-  m_TagString: Untagged
+  m_TagString: Lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,16 +294,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyIndex: 0
   targetTag: Body
-  preferredDist: 10
-  moveSpeed: 3
+  preferredDist: 15
+  moveSpeed: 5
+  canDamage: 1
+  damageCooldown: 1
   rotator: {fileID: 8049457651177786543}
   bodyAnimator: {fileID: 4502108809584392243}
   corpseSprites:
   - {fileID: 21300000, guid: 3e82a9a3dc9fdf44c80042e27079ab28, type: 3}
-  projectilePrefab: {fileID: 2938654495494598252, guid: 0f015da3deddd3e4bb4c544f703e5631, type: 3}
+  projectilePrefab: {fileID: 7899330077605568928, guid: 84b938ba52b9fb44e9642f1f272d2d38, type: 3}
   projectilePool: []
-  missileSpeed: 8
-  missileLifeSpan: 3
+  missileSpeed: 10
+  missileLifeSpan: 4
   minTimeUntilNextShot: 2
   maxTimeUntilNextShot: 3
 --- !u!1 &8049457651177786540

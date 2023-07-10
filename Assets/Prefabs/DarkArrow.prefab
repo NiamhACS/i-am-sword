@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3625662094854384897}
   m_Layer: 0
   m_Name: DarkArrow
-  m_TagString: Untagged
+  m_TagString: Lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

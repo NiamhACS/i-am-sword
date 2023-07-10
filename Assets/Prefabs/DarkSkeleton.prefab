@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4282837548258134134}
   m_Layer: 0
   m_Name: DarkSkeleton
-  m_TagString: Untagged
+  m_TagString: Lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

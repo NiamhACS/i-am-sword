@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 7824326035227843634}
   m_Layer: 0
   m_Name: PinkSlime
-  m_TagString: Untagged
+  m_TagString: Lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -22,7 +22,6 @@ public class Adventurer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(-(swordAnchor.position - body.position));
         body.up = -(swordAnchor.position - body.position).normalized;
         rightArm.position = (rightArmAnchor.position + swordAnchor.position) / 2;
         rightArm.up = rightArmAnchor.position - swordAnchor.position;

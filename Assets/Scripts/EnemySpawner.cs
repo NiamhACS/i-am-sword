@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     public static EnemySpawner instance;
     public SpawnData[] enemies;
     public RectTransform spawnBounds;
-
+    public float spawnRateScalar;
 
 
     public void Start()
@@ -33,17 +33,22 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        spawnRateScalar = Mathf.Min(1f, 24f / Mathf.Min(120f, Time.timeSinceLevelLoad));
+    }
+
     public float Spawn(SpawnData data)
     {
         Vector2 spawnPoint = RandomPointOnRect(spawnBounds.rect);
         if (data.pool.Count == 0)
         {
-            data.pool.Enqueue(Instantiate(data.prefab));
+            data.pool.Enqueue(Instantiate(data.prefab, data.parent));
         }
         GameObject newEnemy = data.pool.Dequeue();
         newEnemy.transform.position = spawnPoint;
         newEnemy.SetActive(true);
-        return Random.Range(data.spawnIntervalRange.x, data.spawnIntervalRange.y);
+        return Random.Range(data.spawnIntervalRange.x * spawnRateScalar, data.spawnIntervalRange.y * spawnRateScalar);
     }
 
     public Queue<GameObject> GeneratePool(SpawnData spawnData, int quantity)
@@ -51,7 +56,8 @@ public class EnemySpawner : MonoBehaviour
         Queue<GameObject> pool = new();
         for (int i = 0; i < quantity; i++)
         {
-            GameObject newEnemy = Instantiate(spawnData.prefab);
+            GameObject newEnemy = Instantiate(spawnData.prefab, spawnData.parent);
+            Debug.Log(newEnemy.GetComponent<Enemy>());
             newEnemy.SetActive(false);
             newEnemy.GetComponent<Enemy>().enemyIndex = spawnData.enemyIndex;
             pool.Enqueue(newEnemy);
